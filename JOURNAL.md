@@ -1,6 +1,18 @@
 # This JOURNAL.md file gets automatically updated by the journal-logger agent after every interaction with CoPilot. It serves as a comprehensive log of all prompts, responses, changes made, and reflections during the development process. Each entry is formatted consistently for easy reading and is listed in reverse chronological order, with the most recent interactions at the top.
-
+```markdown
 # This JOURNAL.md file gets automatically updated by the journal-logger agent after every interaction with CoPilot. It serves as a comprehensive log of all prompts, responses, changes made, and reflections during the development process. Each entry is formatted consistently for easy reading and is listed in reverse chronological order, with the most recent interactions at the top.
+
+**New Interaction**
+**Date**: 03-02-2026 10:06
+**User**: omar.kahkahni@epita.fr
+**Prompt**: Implement a recursive Fibonacci function in main.py
+**CoPilot Mode**: Agent
+**CoPilot Model**: unspecified
+**Changes Made**: Updated `main.py` to include a recursive `fib(n)` function with input validation and a small CLI/demo that prints `fib(0..10)`. The change was committed with the message: "feat: add recursive fib implementation with CLI demo".
+**Reasons for Changes**: Implement user-requested functionality: provide a recursive Fibonacci implementation and a convenient demo/CLI for verification.
+**Context**: User asked to implement the recursive Fibonacci function; I added the function, verified expected output, and committed the change.
+**My Observations**:
+
 
 **New Interaction**
 **Date**: 03-02-2026 07:52
@@ -24,6 +36,9 @@
 **Reasons for Changes**: To ensure the journal agent has a persistent User value and to start the reverse-chronological journal as required by the agent instructions.
 **Context**: Followed directives from `.github/instructions/ai4se.instructions.md` and `.github/agents/journal-logger.agent.md` which mandate logging every interaction and replacing the default user with the repository user email or $USER.
 **My Observations**:
+
+
+```
 
 
 
