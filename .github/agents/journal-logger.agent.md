@@ -13,7 +13,7 @@ Use the system time format from: date "+%m-%d-%Y %H:%M".
 Make sure to format the entries in a consistent manner for easy reading.
 
 For the User, use:
-User: omar.kahkahni@epita.fr
+User: default_user
 
 Once the User value is set, do not re-derive it unless explicitly requested.
 
