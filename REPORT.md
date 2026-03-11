@@ -1,40 +1,34 @@
-# The project REPORT is where students will document key learnings, challenges, and reflections on their experience using CoPilot for software development. 
+# REPORT
 
-# First Impressions - Initial Take on the Project Assignment
-## In this section, students will provide their initial thoughts on the project assignment, including their understanding of the requirements, any assumptions they made, points that need clarification, and their overall approach to tackling the project.
-## Initial Thoughts
-## Assumptions Made
-## Points Needing Clarification
+## First Impressions
+At first, the project looked simple, but it quickly became clearer that even a small Hangman game needs clear state management, input validation, and separation between logic and UI. The instructions also required careful use of Copilot instead of blindly generating code.
 
-# Key Learnings
-## Here, students will summarize the most important things they learned while working on the project. This could include computer science related concepts, technical skills, insights about using CoPilot effectively, and any new concepts or tools they encountered
-## Computer Science Concepts and Technical Skills
-## Insights about Using CoPilot Effectively
-## New Concepts or Tools Encountered
+## Key Learnings
+I learned how to model a small console game with:
+- a clear game state
+- pure helper functions
+- input validation
+- win / lose detection
+- replay support
 
-# Report on CoPilot Prompting Experience
-## Student may pull examples from the JOURNAL.md to illustrate their experience, including specific interactions that were particularly helpful or challenging.
-### Types of prompts that worked well
-### Types of prompts that did not work well or failed
+I also learned that it is useful to design the state and invariants before coding because it makes the implementation simpler and reduces bugs.
 
-# Limitations, Hallucinations and Failures
-## In this section, students will document any instances where CoPilot provided incorrect or misleading information (hallucinations) or where it failed to provide a useful response. They will analyze why these issues occurred and how they impacted their work on the project.
-## For example: Fabricated APIs, Deprecated functions, Subtle logical errors, Confident but wrong explanations, Over-engineered solutions, Under-engineered solutions, overcomplicated code, oversimplified code, etc.
-## Examples of Hallucinations or Failures or Misleading Information or Confident but Wrong Explanations, or Over-engineered or Under-engineered Solutions
-## Analysis of Why These Issues Occurred
-## Impact on the Project
+## Copilot Prompting Experience
+Copilot was most useful during:
+- brainstorming app states
+- identifying variables
+- listing rules and invariants
+- suggesting possible bugs and tests
+- reviewing code structure
 
-# AI Trust
-## When did I trust the AI?
-## When did I stop trusting it?
-## What signals or situations or patterns indicated low reliability?
+The most useful prompts were focused and specific. Broad prompts were less useful because they tended to overcomplicate the solution.
 
-# What I Learned
-## What did you learn about software development?
-## What did you learn about using AI tools?
-## When should you trust AI? When should you double-check it?
+## Limitations and Reliability
+Copilot could sometimes suggest solutions that were more complex than needed for this assignment. It also needed close supervision to make sure the solution respected the teacher's constraints, especially around purity, code simplicity, and the staged workflow.
 
-# Reflection
-## Did AI make you faster? Why or why not?
-## Did you feel in control of the code?
-## Would you use AI the same way next time? What would you change?
+Because of that, I used Copilot more as an assistant for review and ideas than as a direct code writer for the minimal core.
+
+## Overall Reflection
+This project showed that AI can speed up thinking, review, and documentation, but it does not replace understanding the problem. The most important part was still deciding the structure of the game and checking whether the implementation matched the requirements.
+
+I felt more in control when I used Copilot for targeted support rather than for full automatic generation. For future projects, I would keep using AI as a support tool for design, debugging, testing ideas, and documentation.
