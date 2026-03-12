@@ -1,34 +1,37 @@
 # REPORT
 
 ## First Impressions
-At first, the project looked simple, but it quickly became clearer that even a small Hangman game needs clear state management, input validation, and separation between logic and UI. The instructions also required careful use of Copilot instead of blindly generating code.
+At first, the project looked simple. After starting it, I realized that even a small word guessing game needs careful handling of state, input validation, and game flow. What looked easy at first became a good exercise in structuring a program clearly.
+
+Another important part of the project was using Copilot in a controlled way. I understood quickly that the goal was not to let it generate everything, but to use it step by step and stay in control of the design.
 
 ## Key Learnings
-I learned how to model a small console game with:
+Through this project, I learned how to structure a small console game with:
 - a clear game state
-- pure helper functions
-- input validation
-- win / lose detection
+- input normalization and validation
+- guessed-letter tracking
+- win and lose conditions
 - replay support
+- helper functions with clear roles
 
-I also learned that it is useful to design the state and invariants before coding because it makes the implementation simpler and reduces bugs.
+I also learned that thinking about the state of the application before coding helps a lot. Listing variables, rules, and possible bugs early made the implementation easier and reduced confusion later.
 
 ## Copilot Prompting Experience
-Copilot was most useful during:
-- brainstorming app states
-- identifying variables
-- listing rules and invariants
-- suggesting possible bugs and tests
-- reviewing code structure
+Copilot was most useful when I used it with focused prompts. It helped me:
+- build the project in small steps
+- think about app states and variables
+- identify rules and invariants
+- review structure and reliability
+- reflect on possible bugs and improvements
 
-The most useful prompts were focused and specific. Broad prompts were less useful because they tended to overcomplicate the solution.
+The most useful prompts were the specific ones. Broad prompts were less helpful because they often made the solution more complicated than necessary.
 
 ## Limitations and Reliability
-Copilot could sometimes suggest solutions that were more complex than needed for this assignment. It also needed close supervision to make sure the solution respected the teacher's constraints, especially around purity, code simplicity, and the staged workflow.
+Copilot was helpful, but it still needed supervision. Some suggestions were too broad or too complex for the level and scope of this assignment. Because of that, I used it more as a support tool for ideas, structure, and review than as something that should write the whole solution by itself.
 
-Because of that, I used Copilot more as an assistant for review and ideas than as a direct code writer for the minimal core.
+This was especially important for keeping the code simple and reliable. I wanted the final version to have clear separation between logic, input, display, and replay handling.
 
 ## Overall Reflection
-This project showed that AI can speed up thinking, review, and documentation, but it does not replace understanding the problem. The most important part was still deciding the structure of the game and checking whether the implementation matched the requirements.
+This project showed me that AI can be useful for support, review, and structured thinking, but it does not replace understanding the program. The most important part was still making design decisions, checking the logic, and making sure the final code matched the assignment requirements.
 
-I felt more in control when I used Copilot for targeted support rather than for full automatic generation. For future projects, I would keep using AI as a support tool for design, debugging, testing ideas, and documentation.
+I felt more confident when I used Copilot in small stages instead of depending on it for everything at once. For future projects, I would use it the same way: as a tool for brainstorming, reviewing, debugging ideas, and improving structure, while keeping control of the final implementation.

@@ -1,46 +1,41 @@
-
-
-## `MY_NOTES.md`
-```md
 # My Original Thinking
 
-## App States
-- Playing
-- Won
-- Lost
-- Replay choice after game ends
+## States
+- playing
+- won
+- lost
+- replay choice at the end
 
-## App Variables
-- `secret_word`: chosen word
-- `guessed_letters`: all guessed letters
-- `wrong_guesses`: guessed letters not in the word
-- `lives`: remaining turns
-- `max_lives`: starting number of turns
-- `masked_word`: visible version of the word
+## Variables
+- `secret_word`: the word to guess
+- `guessed_letters`: letters the player already tried
+- `wrong_guesses`: wrong letters
+- `lives`: how many tries are left
+- `max_lives`: starting number of tries
+- `masked_word`: what the player sees
 
-## App Rules and Invariants
-- One guess must be one letter
-- Input should be case-insensitive
-- Duplicate guesses should not reduce lives twice
-- Correct guesses reveal all matching positions
-- Wrong guesses reduce lives by one
-- The game ends on full word reveal or zero lives
-- The visible word length must always match the secret word length
+## Rules I wanted to keep
+- one guess should be one letter only
+- uppercase and lowercase should be treated the same
+- repeating the same guess should not remove a life again
+- correct guesses should reveal every matching letter
+- wrong guesses should remove one life
+- the game should stop when the word is complete or lives reach zero
+- the displayed word should always match the real word length
 
-## App Bugs
-- Empty input
-- More than one character
-- Non-letter input
-- Repeated guesses
-- Off-by-one error on lives
-- Incorrect handling of repeated letters in the secret word
-- Guess accepted after game already ended
+## Bugs I wanted to avoid
+- empty input
+- typing more than one character
+- typing something that is not a letter
+- repeated guesses
+- losing one life too many or too early
+- repeated letters not showing correctly
+- still accepting guesses after the game is over
 
-# Copilot Suggestions
-
-- Separate logic and UI functions
-- Keep `update_game_state` pure
-- Use a helper function to build the masked word
-- Validate input before updating the game state
-- Track incorrect guesses separately from display logic
-- Ask Copilot for review and test ideas after writing the minimal core
+## Ideas from Copilot that were useful
+- separate the game logic from input and display
+- keep `update_game_state` pure
+- use a helper function to build the masked word
+- validate input before changing the game state
+- keep wrong-guess tracking separate from display
+- use Copilot again later to review the structure
