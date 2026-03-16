@@ -6,6 +6,7 @@ Console Hangman-style game for the EPITA lab.
 from __future__ import annotations
 
 import random
+import string
 
 
 WORDS = [
@@ -41,13 +42,7 @@ def update_game_state(
     guess: str,
     lives: int,
 ) -> tuple[list[str], int]:
-    """Return updated guessed letters and lives.
-
-    Pure function:
-    - does not mutate the input guessed_letters list
-    - does not use globals
-    - does not perform any I/O
-    """
+    """Return updated guessed letters and lives."""
     new_guessed_letters = guessed_letters.copy()
 
     if guess not in new_guessed_letters:
@@ -114,8 +109,19 @@ def ask_guess() -> str:
     return normalize_guess(input("Guess a letter: "))
 
 
+def get_auto_guess(guessed_letters: list[str]) -> str:
+    """Return a new automatic guess that has not been used yet."""
+    available_letters: list[str] = []
+
+    for letter in string.ascii_lowercase:
+        if letter not in guessed_letters:
+            available_letters.append(letter)
+
+    return random.choice(available_letters)
+
+
 def play_one_game(words: list[str], max_lives: int = 6) -> None:
-    """Play one full game."""
+    """Play one full game in normal mode."""
     secret_word = choose_secret_word(words)
     guessed_letters: list[str] = []
     lives = max_lives
@@ -152,21 +158,64 @@ def play_one_game(words: list[str], max_lives: int = 6) -> None:
         print(f"You lost! The word was '{secret_word.upper()}'.")
 
 
-def ask_replay() -> bool:
-    """Ask the user whether they want to replay."""
-    answer = input("Play again? (y/n): ").strip().lower()
-    return answer == "y"
+def play_auto_game(words: list[str], max_lives: int = 6) -> None:
+    """Play one full game in auto-play mode."""
+    secret_word = choose_secret_word(words)
+    guessed_letters: list[str] = []
+    lives = max_lives
+
+    print("Auto-play mode started.")
+
+    while should_continue(secret_word, guessed_letters, lives):
+        display_game(secret_word, guessed_letters, lives)
+        guess = get_auto_guess(guessed_letters)
+        print(f"Computer guessed: {guess}")
+
+        guessed_letters, lives = update_game_state(
+            secret_word,
+            guessed_letters,
+            guess,
+            lives,
+        )
+
+        if guess in secret_word:
+            print("Correct!")
+        else:
+            print("Wrong!")
+
+    display_game(secret_word, guessed_letters, lives)
+
+    if is_won(secret_word, guessed_letters):
+        print(f"Auto player won! The word was '{secret_word.upper()}'.")
+    else:
+        print(f"Auto player lost! The word was '{secret_word.upper()}'.")
+
+
+def ask_mode() -> str:
+    """Ask the user to choose normal mode, auto-play, or quit."""
+    print("Choose a mode:")
+    print("1 - Play game")
+    print("2 - Auto play")
+    print("q - Quit")
+    return input("Your choice: ").strip().lower()
 
 
 def run_game() -> None:
-    """Run the application and support replay."""
-    keep_playing = True
-    while keep_playing:
-        play_one_game(WORDS, 6)
-        keep_playing = ask_replay()
-    print("Goodbye!")
+    """Run the application with mode selection."""
+    while True:
+        choice = ask_mode()
+
+        if choice == "1":
+            play_one_game(WORDS, 6)
+        elif choice == "2":
+            play_auto_game(WORDS, 6)
+        elif choice == "q":
+            print("Goodbye!")
+            break
+        else:
+            print("Invalid choice. Please try again.")
 
 
 if __name__ == "__main__":
     run_game()
-
+    
