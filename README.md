@@ -4,10 +4,10 @@ A simple console word guessing game written in Python.
 
 ## Description
 
-The program picks a random word from a small list.  
-The player can either play normally by entering letters or use the auto play mode.  
-Correct guesses reveal the matching letters, while wrong guesses reduce the number of remaining lives.  
-The game ends when the word is fully guessed or when the player runs out of lives.  
+The program picks a random word from a small list.
+The player can either play normally by entering letters or use the auto play mode.
+Correct guesses reveal the matching letters, while wrong guesses reduce the number of remaining lives.
+The game ends when the word is fully guessed or when the player runs out of lives.
 At the end, the player can choose to play again.
 
 ## Features
@@ -28,15 +28,15 @@ At the end, the player can choose to play again.
 
 ## How to run
 
-```bash
 python3 main.py
+
 When the program starts:
-- enter `1` for normal play
-- enter `2` for auto play
+- enter 1 for normal play
+- enter 2 for auto play
 
 ## Files
 
-- `main.py`: game code
-- `MY_NOTES.md`: initial analysis and design ideas
-- `JOURNAL.md`: development log
-- `REPORT.md`: project report
+- main.py: game code
+- MY_NOTES.md: initial analysis and design ideas
+- JOURNAL.md: development log
+- REPORT.md: project report
