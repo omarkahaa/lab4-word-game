@@ -12,7 +12,7 @@ Correct guesses reveal the matching letters, while wrong guesses reduce the numb
 
 The game ends when the word is fully guessed or when the player runs out of lives.
 
-At the end, the player can choose to play again.
+At the end of a game, the program returns to the mode menu so the user can start another game, use auto play, or quit.
 
 ## Features
 
@@ -24,7 +24,7 @@ At the end, the player can choose to play again.
 - Guessed-letter tracking
 - Wrong-letter tracking
 - Win / lose detection
-- Replay support
+- Return to mode menu after each game
 
 ## Requirements
 
@@ -37,6 +37,9 @@ At the end, the player can choose to play again.
 When the program starts:
 - enter 1 for normal play
 - enter 2 for auto play
+- enter 3 to quit
+
+After a game ends, the program returns to the menu.
 
 ## Files
 
@@ -44,3 +47,4 @@ When the program starts:
 - MY_NOTES.md: initial analysis and design ideas
 - JOURNAL.md: development log
 - REPORT.md: project report
+
