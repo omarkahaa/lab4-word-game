@@ -85,7 +85,7 @@ This completed the basic game flow. In the final version, I kept `lives`, added 
 At that point the game worked, but the code was getting messy, so I wanted to clean it up.
 
 Prompt:
-Refactor word_game.py to make the structure cleaner by separating game logic from display and input. Keep the same behavior, but introduce small helper functions where useful, especially for masked-word display, input normalization/validation, win/lose checks, and replay handling.
+Refactor word_game.py to make the structure cleaner by separating game logic from display and input. Keep the same behavior, but introduce small helper functions where useful, especially for masked-word display, input normalization/validation, win/lose checks, and mode handling.
 
 Copilot suggested splitting the code into smaller helper functions with clearer roles.
 
@@ -97,8 +97,8 @@ This strongly influenced the final structure. The final code ended up with separ
 - checking incorrect guesses
 - checking win / lose conditions
 - displaying the game state
-- asking for replay
-- running one game and replaying again
+- asking for the mode
+- running one game and then returning to the mode menu
 
 This was probably the most useful structural step, because it made the program easier to read and easier to control.
 
@@ -107,7 +107,7 @@ This was probably the most useful structural step, because it made the program e
 After that, I used Copilot more as a reviewer than as a generator.
 
 Prompt:
-Review word_game.py and improve it for reliability and assignment quality. Focus on: keeping helper functions simple, avoiding inconsistent state, making repeated guesses harmless, making input case-insensitive, and ensuring the game can replay cleanly without leftover state from the previous round.
+Review word_game.py and improve it for reliability and assignment quality. Focus on: keeping helper functions simple, avoiding inconsistent state, making repeated guesses harmless, making input case-insensitive, and ensuring the game can start a new round cleanly without leftover state from the previous round.
 
 Copilot reviewed the code and confirmed that the important reliability points were already there:
 - normalized input
@@ -115,7 +115,7 @@ Copilot reviewed the code and confirmed that the important reliability points we
 - fresh state for each round
 - simpler helper functions
 
-That matched the final structure well. Each round starts fresh in `play_one_game()`, and replay is handled separately in `run_game()`.
+That matched the final structure well. Each round starts fresh in `play_one_game()`, and mode selection is handled separately in `run_game()`.
 
 ---
 
@@ -127,7 +127,7 @@ Now review word_game.py one more time specifically for the project journal. Summ
 Copilot highlighted the main decisions:
 - building the game step by step
 - validating input early
-- separating one-game logic from replay
+- separating one-game logic from mode selection
 - using helper functions with single responsibilities
 
 That matched the final result well.
@@ -142,7 +142,7 @@ The final game includes:
 - guessed-letter tracking
 - wrong-letter tracking
 - win / lose checks
-- replay support
+- return to the mode menu after each game
 
 The last important addition was the auto play mode required for the lab update.
 
