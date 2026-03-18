@@ -30,7 +30,6 @@ At the end, the player can choose to play again.
 
 ```bash
 python3 main.py
-
 When the program starts:
 - enter `1` for normal play
 - enter `2` for auto play
