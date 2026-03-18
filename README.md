@@ -5,9 +5,13 @@ A simple console word guessing game written in Python.
 ## Description
 
 The program picks a random word from a small list.
+
 The player can either play normally by entering letters or use the auto play mode.
+
 Correct guesses reveal the matching letters, while wrong guesses reduce the number of remaining lives.
+
 The game ends when the word is fully guessed or when the player runs out of lives.
+
 At the end, the player can choose to play again.
 
 ## Features
