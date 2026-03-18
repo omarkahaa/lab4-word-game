@@ -28,7 +28,7 @@ At the end, the player can choose to play again.
 
 ## How to run
 
-python3 main.py
+    python3 main.py
 
 When the program starts:
 - enter 1 for normal play
