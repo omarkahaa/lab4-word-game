@@ -37,7 +37,7 @@ At the end of a game, the program returns to the mode menu so the user can start
 When the program starts:
 - enter 1 for normal play
 - enter 2 for auto play
-- enter 3 to quit
+- enter q to quit
 
 After a game ends, the program returns to the menu.
 
