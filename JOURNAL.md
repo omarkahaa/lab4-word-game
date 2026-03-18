@@ -143,3 +143,18 @@ The final game includes:
 - wrong-letter tracking
 - win / lose checks
 - replay support
+
+The last important addition was the auto play mode required for the lab update.
+
+Prompt:
+Add an auto-play mode to the Python word guessing game. The computer should automatically choose letters that have not been guessed yet, and it should never suggest the same letter twice. Also add a simple mode selection so the user can choose between normal play and auto play.
+
+Copilot suggested using the alphabet as a pool of possible letters and filtering out the letters that were already guessed.
+
+This was useful because it matched the lab requirement and also let me reuse most of the same game structure instead of making a completely separate program.
+
+In the final version, I added `get_auto_guess()` so the computer can choose a new unused letter, and `play_auto_game()` so the game can run by itself until it wins or loses.
+
+I also added `ask_mode()` and updated `run_game()` so the player can choose between normal play, auto play, or quit.
+
+This was the last step that made the project match the Lab 4 update more clearly.
